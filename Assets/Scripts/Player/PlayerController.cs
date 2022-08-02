@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
             
         }
 
-        if(Input.GetButtonDown("Jump") && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if(Input.GetButtonDown("Jump"))
         {
             if(grounded)
             GetComponent<Rigidbody>().AddForce(transform.up * jumpForce);
@@ -90,9 +90,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
-            return;
-
         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
     }
 }
