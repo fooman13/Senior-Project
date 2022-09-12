@@ -748,7 +748,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Bottom
 --- !u!222 &389394847
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -922,7 +922,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Front
 --- !u!222 &488939197
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1001,7 +1001,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'Top
+
+'
 --- !u!222 &549390488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1346,7 +1348,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'Back
+
+'
 --- !u!222 &1191825290
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1926,7 +1930,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Right
 --- !u!222 &1567589100
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2642,7 +2646,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Left
 --- !u!222 &1933610898
 CanvasRenderer:
   m_ObjectHideFlags: 0
