@@ -12,12 +12,13 @@ public class ChangeGravityDirection : MonoBehaviour
     public GameObject GUI;
 
     public bool isPaused = false;
-    private Quaternion UP;
-    private Quaternion DOWN;
-    private Quaternion LEFT;
-    private Quaternion RIGHT;
-    private Quaternion FRONT;
-    private Quaternion BACK;
+    private Quaternion CurrentRotation;
+    Vector3 UP;
+    Vector3 DOWN;
+    Vector3 LEFT;
+    Vector3 RIGHT;
+    Vector3 FRONT;
+    Vector3 BACK;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class ChangeGravityDirection : MonoBehaviour
 
         LEFT.x = 90;
         LEFT.z = 270;
+
         RIGHT.x = 90;
         RIGHT.z = 90;
 
@@ -62,9 +64,9 @@ public class ChangeGravityDirection : MonoBehaviour
             playerMovementScript.enabled = true;
     }
 
-    private Quaternion GetCamRotation(Quaternion N)
+    private Vector3 GetCamRotation(Vector3 N)
     {
-        N.y = player.transform.rotation.y;
+        N.y = player.transform.localRotation.y;
         return N;
     }
 
@@ -90,42 +92,42 @@ public class ChangeGravityDirection : MonoBehaviour
     public void RotateUP()
     {
         GetCamRotation(UP);
-        player.transform.rotation = UP;
+        player.transform.Rotate(UP);
         ResumeGame();
         GUI.SetActive(false);
     }
     public void RotateDOWN()
     {
         GetCamRotation(DOWN);
-        player.transform.rotation = DOWN;
+        player.transform.Rotate(DOWN);
         ResumeGame();
         GUI.SetActive(false);
     }
     public void RotateLEFT()
     {
         GetCamRotation(LEFT);
-        player.transform.rotation = LEFT;
+        player.transform.Rotate(LEFT);
         ResumeGame();
         GUI.SetActive(false);
     }
     public void RotateRIGHT()
     {
         GetCamRotation(RIGHT);
-        player.transform.rotation = RIGHT;
+        player.transform.Rotate(RIGHT);
         ResumeGame();
         GUI.SetActive(false);
     }
     public void RotateFRONT()
     {
         GetCamRotation(FRONT);
-        player.transform.rotation = FRONT;
+        player.transform.Rotate(FRONT);
         ResumeGame();
         GUI.SetActive(false);
     }
     public void RotateBACK()
     {
         GetCamRotation(BACK);
-        player.transform.rotation = BACK;
+        player.transform.Rotate(BACK);
         ResumeGame();
         GUI.SetActive(false);
     }
