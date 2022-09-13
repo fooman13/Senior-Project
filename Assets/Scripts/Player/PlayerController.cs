@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -42,28 +38,28 @@ public class PlayerController : MonoBehaviour
         cameraT.localEulerAngles = Vector3.left * verticalLookRotation;
 
         Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-    
+
         Vector3 targetMoveAmount = moveDir * walkSpeed;
         moveAmount = Vector3.SmoothDamp(moveAmount, targetMoveAmount, ref smoothMoveVelocity, .15f);
 
-       // if(!SprintEnabled)
-       // {
-       //     Debug.Log("Sprint is disabled");
-       //     CoolDown -= Time.deltaTime;
-       //     if(CoolDown<=0)
-       //     {
-       //         SprintEnabled = true;
-       //         SprintTimer = 3f;
-       //         CoolDown = 6f;
-       //     }
-       // }
+        // if(!SprintEnabled)
+        // {
+        //     Debug.Log("Sprint is disabled");
+        //     CoolDown -= Time.deltaTime;
+        //     if(CoolDown<=0)
+        //     {
+        //         SprintEnabled = true;
+        //         SprintTimer = 3f;
+        //         CoolDown = 6f;
+        //     }
+        // }
 
-        if(Input.GetButton("Run"))
+        if (Input.GetButton("Run"))
         {
-            if(SprintEnabled)
+            if (SprintEnabled)
             {
                 Debug.Log("Sprint is enabled");
-                if(grounded)
+                if (grounded)
                 {
                     targetMoveAmount = moveDir * SprintSpeed;
                     moveAmount = Vector3.SmoothDamp(moveAmount, targetMoveAmount, ref smoothMoveVelocity, .15f);
@@ -72,13 +68,13 @@ public class PlayerController : MonoBehaviour
                     //    SprintEnabled = false;
                 }
             }
-            
+
         }
 
-        if(Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
-            if(grounded)
-            GetComponent<Rigidbody>().AddForce(transform.up * jumpForce);
+            if (grounded)
+                GetComponent<Rigidbody>().AddForce(transform.up * jumpForce);
         }
         grounded = false;
         Ray ray = new Ray(transform.position, -transform.up);
