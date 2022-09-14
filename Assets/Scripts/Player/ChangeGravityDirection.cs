@@ -64,10 +64,10 @@ public class ChangeGravityDirection : MonoBehaviour
             playerMovementScript.enabled = true;
     }
 
-    private Vector3 GetCamRotation(Vector3 N)
+    private Vector3 GetCamRotation(Vector3 rotate)
     {
-        N.y = player.transform.localRotation.y;
-        return N;
+        rotate.y = player.transform.localRotation.y;
+        return rotate;
     }
 
     // Update is called once per frame
